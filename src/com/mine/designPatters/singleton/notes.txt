@@ -1,0 +1,23 @@
+Singleton design pattern comes under the creational pattern. In this pattern, only a single object of a class gets created,
+and client can access this only object without the need to instantiate the object of the class.
+
+- What if I do not declare the object and get method static?
+We can not call anything than, or we won't be able to get the instance object.
+
+Can we pass a value in the parameters of the get method?
+No, we can't pass a value because a singleton with a parameter is not a singleton. Instantiation will always be parameter-less.
+Secondly, If we do pass a value in get(), we can not use this keyword in the static context, so we can't assign the passed
+value to our instance variable.
+However, we can pass values in a method after the initialization call.
+https://stackoverflow.com/questions/1050991/singleton-with-arguments-in-java
+
+Is singleton thread safe?
+No, multiple threads can lead to multiple constructor creation calls as done in the code.
+https://www.learnbestcoding.com/post/11/thread-safe-singleton-design-pattern-example
+https://medium.com/@cancerian0684/singleton-design-pattern-and-how-to-make-it-thread-safe-b207c0e7e368
+
+Making the method volatile ...
+This approach is thread-safe and behavior of the Singleton is predictable in multi-threaded environment, but there are
+performance issues with this approach:
+- synchronizing a method could in some extreme cases decrease the performance by a factor of 100 or higher.
+- once the singleton object is initialized completely, acquiring and releasing the locks would appear unnecessary.
