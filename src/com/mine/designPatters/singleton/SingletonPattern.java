@@ -14,7 +14,7 @@ public class SingletonPattern {
     - Obtain the lock
     - Double-check whether the variable has already been initialized, if the another thread acquired the lock first, it may have
      already done the initialization. If so, return the initialized variable.
-    - Otherwise, initialize and return the variable.
+    - Otherwise, initialize and return the variable..
     */
     public static SingletonPattern getSingletonPattern() {
         SingletonPattern ref = singletonPattern;
