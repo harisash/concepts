@@ -21,3 +21,10 @@ This approach is thread-safe and behavior of the Singleton is predictable in mul
 performance issues with this approach:
 - synchronizing a method could in some extreme cases decrease the performance by a factor of 100 or higher.
 - once the singleton object is initialized completely, acquiring and releasing the locks would appear unnecessary.
+
+Optimization Algorithm:
+    - Check that the variable is initialized without obtaining the lock. If it is initialized, return it immediately.
+    - Obtain the lock
+    - Double-check whether the variable has already been initialized, if the another thread acquired the lock first, it may have
+     already done the initialization. If so, return the initialized variable.
+    - Otherwise, initialize and return the variable.
