@@ -1,12 +1,15 @@
 package com.mine.oopConcepts.inheritance;
 
-import com.mine.oopConcepts.abstration.Child;
-
 public class InheritanceMain {
     public static void main(String[] args) {
-        Point p1 = new Point(1, 2);
-        Point p2 = new Point(1, 2);
+//        UIControl[] controls = {new TextBox(), new CheckBox()};
+//        for (UIControl control : controls) {
+//            control.render();
+//        }
 
-        System.out.println(p1.equals(p2));
+        UIControl control = new TextBox();
+        control.enable();
+        System.out.println(control.isEnabled());
+        control.render();
     }
 }

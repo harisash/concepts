@@ -1,12 +1,7 @@
 package com.mine.oopConcepts.inheritance;
 
-public class UIControl {
+public abstract class UIControl {
     private boolean isEnabled;
-
-    public UIControl(boolean isEnabled) {
-        System.out.println("UI Control");
-        this.isEnabled = isEnabled;
-    }
 
     public final void enable() {
         isEnabled = true;
@@ -19,4 +14,6 @@ public class UIControl {
     public boolean isEnabled() {
         return isEnabled;
     }
+
+    public abstract void render ();
 }
