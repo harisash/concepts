@@ -24,4 +24,8 @@ public class JazzCharging extends Charging {
         // Return => Response
         return "Jazz charging";
     }
+
+    public void innerInJazz() {
+        System.out.println("Inner in Jazz");
+    }
 }
